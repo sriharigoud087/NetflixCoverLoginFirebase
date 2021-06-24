@@ -1,0 +1,34 @@
+#show_bg_2 {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.60), rgba(0, 0, 4, 0.73)), url('../../assets/images/IN-en-20201214-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+    width: 100%;
+    height: 746px;
+    background-size: cover;
+    color: white;
+}
+
+.logo-signin {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    width: 250px;
+}
+
+.homepage-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 202px;
+}
+
+@media (max-width: 800px) {
+    .homepage-text {
+        margin-left: 0px;
+    }
+    h1 {
+        font-size: 39px !important;
+    }
+    h3 {
+        font-size: 20px !important;
+    }
+}

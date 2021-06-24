@@ -1,0 +1,14 @@
+body {
+    background: none;
+}
+
+
+/* .p-inputtext {
+    width: 450px;
+    margin: 31px;
+} */
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,60 @@
+<div class="main-movies">
+    <div class="nav-bar" style="display: flex; justify-content: space-between">
+        <h2 style="color: red; font-size: 33px">NETFLIX</h2>
+        <button pButton type="button" label="log-out" class="p-button-danger" style="
+        background-color: red;
+        width: 114px;
+        height: 41px;
+        /* margin-top: 19px;
+        margin-right: 27px;
+        margin-left: 900px; */
+      " (click)="logout()"></button>
+    </div>
+    <div class="Nav-bar" style="display: flex; justify-content: space-evenly">
+        <a style="color: white" routerLink="/movies">
+            <h2 style="color: white; font-size: 33px">Movies</h2>
+        </a>
+        <a style="color: white" routerLink="/webseries">
+            <h2 style="color: white; font-size: 33px">Web Series</h2>
+        </a>
+        <a style="color: white" routerLink="/tvshows">
+            <h2 style="color: white; font-size: 33px">TV Shows</h2>
+        </a>
+    </div>
+
+    <div class="image-video" style="display: flex; justify-content: space-evenly; margin: 10px">
+        <div class="image-video-1">
+            <video width="400" autoplay loop>
+        <source
+          src="../../assets/images/video-tv-in-0819.m4v"
+          type="video/mp4"
+        />
+        <source
+          src="../../assets/images/video-tv-in-0819.m4v"
+          type="video/ogg"
+        />
+        Your browser does not support HTML video.
+      </video>
+        </div>
+        <div>
+            <video width="400" autoplay loop>
+        <source
+          src="../../assets//images/video-devices-in.m4v"
+          type="video/mp4"
+        />
+        <source
+          src="../../assets/images/video-devices-in.m4v"
+          type="video/ogg"
+        />
+        Your browser does not support HTML video.
+      </video>
+        </div>
+        <div>
+            <video width="400" autoplay loop>
+        <source src="../../assets//images/video-devices.m4v" type="video/mp4" />
+        <source src="../../assets/images/video-devices.m4v" type="video/ogg" />
+        Your browser does not support HTML video.
+      </video>
+        </div>
+    </div>
+</div>

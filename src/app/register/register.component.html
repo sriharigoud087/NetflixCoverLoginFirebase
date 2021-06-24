@@ -1,0 +1,69 @@
+<h2 style="color: red; font-size: 33px; margin-left: 56px">NETFLIX</h2>
+
+<Form [formGroup]="regForm">
+    <p-tabView>
+        <p-tabPanel header="personal">
+            <div class="inputs">
+                <h2>Personal Information</h2>
+                <input type="text" pInputText placeholder="name" ng-required="expression" formControlName="name" required /><br />
+                <input type="text" pInputText placeholder="phoneNumner" ng-required="expression" formControlName="phoneNumber" required /><br />
+                <input type="text" pInputText placeholder="Age" formControlName="age" required /><br />
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Select Plan">
+            <p-dropdown [options]="plans" optionLabel="name"></p-dropdown>
+        </p-tabPanel>
+        <p-tabPanel header="Payments">
+            <div class="inputs">
+                <input type="text" pInputText placeholder="FirstName" formControlName="firstName" /><br />
+                <input type="text" pInputText placeholder="LastName" formControlName="lastName" required /><br />
+                <input type="text" pInputText placeholder="CardNumber" formControlName="cardNumber" required /><br />
+                <input type="text" pInputText placeholder="ExpiryDate(MM/YY)" formControlName="expiryDate" /><br />
+                <input type="text" pInputText placeholder="Security Code(CVV)" formControlName="securityCode" /><br />
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Submit">
+            <div class="inputs">
+                <input type="email" pInputText placeholder="Re-enter EMAIL ADDRESS" formControlName="userName" [class.valid]="
+            regForm.get('userName').valid &&
+            (regForm.get('userName').dirty || regForm.get('userName').touched)
+          " [class.invalid]="
+            regForm.get('userName').invalid &&
+            (regForm.get('userName').dirty || regForm.get('userName').touched)
+          " /><br />
+                <div *ngIf="
+            regForm.get('userName').invalid &&
+            regForm.get('userName').errors &&
+            (regForm.get('userName').dirty || regForm.get('userName').touched)
+          ">
+                    <small class="text-danger" style="color: red" *ngIf="regForm.get('userName').hasError('required')">
+            This field is required.
+          </small>
+                </div>
+                <input type="password" pInputText placeholder="password" formControlName="passWord" [class.valid]="
+            regForm.get('passWord').valid &&
+            (regForm.get('passWord').dirty || regForm.get('passWord').touched)
+          " [class.invalid]="
+            regForm.get('passWord').invalid &&
+            (regForm.get('passWord').dirty || regForm.get('passWord').touched)
+          " /><br />
+                <div *ngIf="
+            regForm.get('passWord').invalid &&
+            regForm.get('passWord').errors &&
+            (regForm.get('passWord').dirty || regForm.get('passWord').touched)
+          ">
+                    <small class="text-danger" style="color: red" *ngIf="regForm.get('passWord').hasError('required')">
+            This field is required.
+          </small>
+                </div>
+                <div class="btn" style="display: flex; justify-content: center">
+                    <button pButton type="submit" label="Submit" (click)="submit()" style="background-color: red" routerLink="/homepage"></button>
+                </div>
+            </div>
+
+            <br />
+        </p-tabPanel>
+    </p-tabView>
+</Form>
+
+<router-outlet></router-outlet>

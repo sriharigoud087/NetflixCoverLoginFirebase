@@ -1,0 +1,39 @@
+body {
+    background: none;
+    background-color: black;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+
+/* 
+
+video {
+    width: 19%;
+    height: 19%;
+    max-width: 54%;
+    max-height: 54%; */
+
+
+/* position: absolute; */
+
+
+/* top: -49%; */
+
+
+/* left: 211%; */
+
+
+/* transform: translate(-153%, -86%);
+/*  */
+
+
+/* }
+img {
+    width: 505px;
+    z-index: 2;
+    max-width: 100%;
+    height: auto;
+} */

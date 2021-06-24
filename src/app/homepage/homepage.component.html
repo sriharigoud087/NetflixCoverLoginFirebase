@@ -1,0 +1,121 @@
+<div id="show_bg_2">
+    <div class="logo-signin">
+        <h2 style="color: red; font-size: 33px">NETFLIX</h2>
+        <button pButton type="button" label="sign-in" class="p-button-danger" style="
+        background-color: red;
+        width: 114px;
+        height: 41px;
+        /* margin-top: 19px;
+        margin-right: 27px;
+        margin-left: 900px; */
+      " (click)="showSignin()"></button>
+    </div>
+    <div class="homepage-text">
+        <div>
+            <h1 style="color: white; font-size: 70px">
+                Unlimited movies, TV shows and more.
+            </h1>
+            <h3 style="color: white; font-size: 33px">
+                Watch anywhere. Cancel anytime.
+            </h3>
+            <p style="color: white; font-size: 28px">
+                Ready to watch? Enter your email to create or restart your membership.
+            </p>
+        </div>
+        <div>
+            <input type="text" pInputText placeholder="EMAIL ADDRESS" style="width: 493px; height: 65px" />
+
+            <button pButton type="button" routerLink="/register" label="GET STARTED" class="p-button-danger" style="background-color: red; width: 300px; height: 65px"></button>
+        </div>
+    </div>
+</div>
+
+<p-dialog header="Sign In" [(visible)]="displaySignin">
+    <div>
+        <form [formGroup]="userForm">
+            <span class="p-float-label" style="padding: 10px">
+        <input
+          type="text"
+          pInputText
+          placeholder="EMAIL ADDRESS"
+          required
+          formControlName="userName"
+          [class.valid]="
+            userForm.get('userName').valid &&
+            (userForm.get('userName').dirty || userForm.get('userName').touched)
+          "
+          [class.invalid]="
+            userForm.get('userName').invalid &&
+            (userForm.get('userName').dirty || userForm.get('userName').touched)
+          "
+        />
+        <div
+          *ngIf="
+            userForm.get('userName').invalid &&
+            userForm.get('userName').errors &&
+            (userForm.get('userName').dirty || userForm.get('userName').touched)
+          "
+        >
+          <small
+            class="text-danger"
+            style="color: red"
+            *ngIf="userForm.get('userName').hasError('required')"
+          >
+            This field is required.
+          </small>
+        </div>
+      </span>
+            <span class="p-float-label" style="padding: 10px">
+        <input
+          type="password"
+          pInputText
+          placeholder="password"
+          required
+          formControlName="password"
+          [class.valid]="
+            userForm.get('password').valid &&
+            (userForm.get('password').dirty || userForm.get('password').touched)
+          "
+          [class.invalid]="
+            userForm.get('password').invalid &&
+            (userForm.get('password').dirty || userForm.get('password').touched)
+          "
+        />
+        <div
+          *ngIf="
+            userForm.get('password').invalid &&
+            userForm.get('password').errors &&
+            (userForm.get('password').dirty || userForm.get('password').touched)
+          "
+        >
+          <small
+            class="text-danger"
+            style="color: red"
+            *ngIf="userForm.get('password').hasError('required')"
+          >
+            This field is required.
+          </small>
+        </div>
+      </span>
+            <button pButton type="submit" label="sign-in" class="p-button-danger" (click)="signIn()" style="
+          background-color: red;
+          width: 250px;
+          height: 41px;
+          margin-top: 19px;
+          margin-right: 27px;
+        "></button>
+            <div style="padding: 10px; display: block">
+                <p-checkbox binary="true" inputId="binary"></p-checkbox><label>Remember me</label>
+            </div>
+            <br /><br /><br />
+            <span><label>New to Netflix?</label>
+        <a href="" routerLink="/register">Sign up Now.</a></span
+      >
+      <br /><br /><br /><br />
+      <label style="font-size: 9px"
+        >This page is protected by Google reCAPTCHA to ensure you're not a
+        bot</label
+      ><label style="color: blue"> Learn More</label>
+    </form>
+  </div>
+</p-dialog>
